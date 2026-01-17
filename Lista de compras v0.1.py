@@ -8,8 +8,10 @@ while True:
 
 
     if select[0].lower() == 'i':
-        inserir = input('Digite para inserir a lista: ')
-        lista_de_compras.append(inserir)
+        inserir = input('Digite para inserir a lista (Usar vírgula para mais de 1 item): ')
+        itens = inserir.split(',')
+        lista_de_compras.extend(itens)
+
 
     elif select[0].lower() == 'a':
 
@@ -29,4 +31,4 @@ while True:
         else:
             print(lista_de_compras)
     else:
-        print('') 
+        print(f'Entrada inesperada: {select}')
