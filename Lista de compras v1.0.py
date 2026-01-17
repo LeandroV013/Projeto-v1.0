@@ -9,7 +9,7 @@ while True:
 
     if select[0].lower() == 'i':
         inserir = input('Digite para inserir a lista: ')
-        lista_de_compras = inserir
+        lista_de_compras.append(inserir)
 
     elif select[0].lower() == 'a':
 
