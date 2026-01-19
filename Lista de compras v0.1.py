@@ -1,7 +1,10 @@
 lista_de_compras = []
 
+def menu():
+    return input('Lista de compras \nSelecione uma opção [i]nserir [a]pagar [l]istar: ')
+
 while True:
-    select = input('Lista de compras \nSelecione uma opção [i]nserir [a]pagar [l]istar: ')
+    select = menu().lower()
     if not select or select[0] not in 'ial':
         print('Selecione uma opção válida.')
         continue
@@ -9,7 +12,7 @@ while True:
 
     if select[0].lower() == 'i':
         inserir = input('Digite para inserir a lista (Usar vírgula para mais de 1 item): ')
-        itens = inserir.split(',')
+        itens = (inserir.strip() for inserir in inserir.split(','))
         lista_de_compras.extend(itens)
 
 
